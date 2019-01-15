@@ -9,4 +9,4 @@ all: src/main.c
 	$(OBJCOPY) -j .text -j .data -O ihex $(OUTDIR)main.elf $(OUTDIR)main.hex
 
 clean:
-	rm -rf *.o *.hex *.elf
+	rm -rf $(OUTDIR)*.o $(OUTDIR)*.hex $(OUTDIR)*.elf
