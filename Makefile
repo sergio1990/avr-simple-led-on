@@ -10,7 +10,7 @@ DUDEBAUDRATE=19200
 DUDEPORT=$(PORT)
 
 all: src/main.c
-	$(CC) -g -Os -mmcu=${CCMCU} -c src/main.* -o $(OUTDIR)main.o
+	$(CC) -g -O3 -mmcu=${CCMCU} -c src/main.* -o $(OUTDIR)main.o
 	$(CC) -g -mmcu=$(CCMCU) -o $(OUTDIR)main.elf $(OUTDIR)main.o
 	$(OBJCOPY) -j .text -j .data -O ihex $(OUTDIR)main.elf $(OUTDIR)main.hex
 
