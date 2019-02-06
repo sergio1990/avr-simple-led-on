@@ -79,8 +79,12 @@ avr-objcopy -j .text -j .data -O ihex output/main.elf output/main.hex
 For-first you have to connect the programmer to the computer. Also you have to
 connect the MCU to the programmer.
 
+There is a required environment variable for the `burn` target: `PORT`. It
+tells `avrdude` where the programmer is connected. In my case, the `usb` value
+works fine. I'm using the USBASP programmer with macOS.
+
 ```
-$ make burn
+$ PORT=usb make burn
 
 avrdude: warning: cannot set sck period. please check for usbasp firmware update.
 avrdude: AVR device initialized and ready to accept instructions
